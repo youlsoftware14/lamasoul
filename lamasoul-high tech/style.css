@@ -1033,3 +1033,53 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+.logo-img {
+    width: 50px; /* Adjust to match your logo size */
+    height: auto;
+    display: block;
+}
+
+
+/* Language Switcher Styles */
+.language-switcher {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.lang-btn {
+    padding: 6px 16px;
+    border: 2px solid #007bff;
+    background: transparent;
+    color: #007bff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(0, 123, 255, 0.1);
+}
+
+.lang-btn.active {
+    background: #007bff;
+    color: white;
+}
+
+/* Responsive language switcher */
+@media (max-width: 768px) {
+    .language-switcher {
+        margin: 15px 0;
+        justify-content: center;
+        order: 3;
+        width: 100%;
+    }
+    
+    .nav-container {
+        flex-wrap: wrap;
+    }
+}

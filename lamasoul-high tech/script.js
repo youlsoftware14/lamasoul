@@ -341,3 +341,5 @@ window.addEventListener('load', () => {
 
 // Listen for scroll events
 window.addEventListener('scroll', animateOnScroll);
+
+

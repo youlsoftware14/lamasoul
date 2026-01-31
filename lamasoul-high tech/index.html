@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lamasoul High-Tech | Innovative Technology Solutions</title>
+    <title data-translate="title">Lamasoul High-Tech | Innovative Technology Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -13,8 +13,8 @@
     <header id="header">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <i class="fas fa-atom logo-icon"></i>
-                <span class="logo-text">Lamasoul high-tech</span>
+                <img src="images/IMG-20250728-WA0002 (1).jpg" alt="Lamasoul High-Tech Logo" class="logo-img">
+                <span class="logo-text" data-translate="company_name">Lamasoul high-tech</span>
             </a>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -22,22 +22,27 @@
             </button>
             
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-translate="nav_home">Home</a></li>
+                <li><a href="#about" data-translate="nav_about">About</a></li>
+                <li><a href="#services" data-translate="nav_services">Services</a></li>
+                <li><a href="#contact" data-translate="nav_contact">Contact</a></li>
             </ul>
+
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
+            </div>
         </div>
     </header>
-
+    
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>Innovative Technology Solutions for Tomorrow's Challenges</h1>
-            <p>Lamasoul High-Tech delivers cutting-edge technology services that transform businesses and drive innovation in the digital age. We combine expertise with creativity to build solutions that matter.</p>
+            <h1 data-translate="hero_title">Innovative Technology Solutions for Tomorrow's Challenges</h1>
+            <p data-translate="hero_subtitle">Lamasoul High-Tech delivers cutting-edge technology services that transform businesses and drive innovation in the digital age. We combine expertise with creativity to build solutions that matter.</p>
             <div class="hero-buttons">
-                <a href="#services" class="cta-button">Our Services</a>
-                <a href="#contact" class="cta-button secondary">Get In Touch</a>
+                <a href="#services" class="cta-button" data-translate="btn_our_services">Our Services</a>
+                <a href="#contact" class="cta-button secondary" data-translate="btn_get_in_touch">Get In Touch</a>
             </div>
         </div>
     </section>
@@ -46,28 +51,28 @@
     <section id="about">
         <div class="container">
             <div class="section-title">
-                <h2>About Lamasoul</h2>
-                <p>We are a forward-thinking technology company dedicated to pushing the boundaries of what's possible in the digital world.</p>
+                <h2 data-translate="about_title">About Lamasoul</h2>
+                <p data-translate="about_subtitle">We are a forward-thinking technology company dedicated to pushing the boundaries of what's possible in the digital world.</p>
             </div>
             
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Driving Innovation Since 2015</h3>
-                    <p>Lamasoul High-Tech was founded with a vision to bridge the gap between complex technology and business needs. Our team of experts brings together diverse skills in software development, AI, cloud computing, and cybersecurity.</p>
-                    <p>We believe that technology should empower, not complicate. That's why we focus on creating intuitive, powerful solutions that help our clients achieve their goals efficiently and effectively.</p>
+                    <h3 data-translate="about_section_title">Driving Innovation Since 2015</h3>
+                    <p data-translate="about_text_1">Lamasoul High-Tech was founded with a vision to bridge the gap between complex technology and business needs. Our team of experts brings together diverse skills in software development, AI, cloud computing, and cybersecurity.</p>
+                    <p data-translate="about_text_2">We believe that technology should empower, not complicate. That's why we focus on creating intuitive, powerful solutions that help our clients achieve their goals efficiently and effectively.</p>
                     
                     <div class="stats-container">
                         <div class="stat">
                             <div class="stat-number" data-count="150">0</div>
-                            <div class="stat-label">Projects Completed</div>
+                            <div class="stat-label" data-translate="stat_projects">Projects Completed</div>
                         </div>
                         <div class="stat">
                             <div class="stat-number" data-count="50">0</div>
-                            <div class="stat-label">Happy Clients</div>
+                            <div class="stat-label" data-translate="stat_clients">Happy Clients</div>
                         </div>
                         <div class="stat">
                             <div class="stat-number" data-count="8">0</div>
-                            <div class="stat-label">Years Experience</div>
+                            <div class="stat-label" data-translate="stat_experience">Years Experience</div>
                         </div>
                     </div>
                 </div>
@@ -78,8 +83,8 @@
                     </div>
                     <div class="floating-card">
                         <i class="fas fa-award"></i>
-                        <h4>Industry Excellence Award 2023</h4>
-                        <p>Recognized for innovation in technology solutions</p>
+                        <h4 data-translate="award_title">Industry Excellence Award 2023</h4>
+                        <p data-translate="award_desc">Recognized for innovation in technology solutions</p>
                     </div>
                 </div>
             </div>
@@ -90,8 +95,8 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Our Services</h2>
-                <p>We offer a comprehensive range of technology services designed to meet the evolving needs of modern businesses.</p>
+                <h2 data-translate="services_title">Our Services</h2>
+                <p data-translate="services_subtitle">We offer a comprehensive range of technology services designed to meet the evolving needs of modern businesses.</p>
             </div>
             
             <div class="services-container">
@@ -99,12 +104,12 @@
                     <div class="service-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Software Development</h3>
-                    <p>Custom software solutions built with the latest technologies to solve your unique business challenges and drive growth.</p>
+                    <h3 data-translate="service1_title">Software Development</h3>
+                    <p data-translate="service1_desc">Custom software solutions built with the latest technologies to solve your unique business challenges and drive growth.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Web Applications</li>
-                        <li><i class="fas fa-check"></i> Enterprise Software</li>
-                        <li><i class="fas fa-check"></i> API Development</li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service1_feature1">Web Applications</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service1_feature2">Enterprise Software</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service1_feature3">API Development</span></li>
                     </ul>
                 </div>
                 
@@ -112,12 +117,12 @@
                     <div class="service-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
-                    <h3>Cloud Solutions</h3>
-                    <p>Secure, scalable cloud infrastructure and migration services to optimize your operations and reduce costs.</p>
+                    <h3 data-translate="service2_title">Cloud Solutions</h3>
+                    <p data-translate="service2_desc">Secure, scalable cloud infrastructure and migration services to optimize your operations and reduce costs.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Cloud Migration</li>
-                        <li><i class="fas fa-check"></i> AWS & Azure</li>
-                        <li><i class="fas fa-check"></i> Infrastructure Setup</li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service2_feature1">Cloud Migration</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service2_feature2">AWS & Azure</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service2_feature3">Infrastructure Setup</span></li>
                     </ul>
                 </div>
                 
@@ -125,12 +130,12 @@
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Cybersecurity</h3>
-                    <p>Comprehensive security solutions to protect your digital assets from evolving threats and vulnerabilities.</p>
+                    <h3 data-translate="service3_title">Cybersecurity</h3>
+                    <p data-translate="service3_desc">Comprehensive security solutions to protect your digital assets from evolving threats and vulnerabilities.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Security Audits</li>
-                        <li><i class="fas fa-check"></i> Threat Protection</li>
-                        <li><i class="fas fa-check"></i> Compliance</li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service3_feature1">Security Audits</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service3_feature2">Threat Protection</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service3_feature3">Compliance</span></li>
                     </ul>
                 </div>
                 
@@ -138,12 +143,12 @@
                     <div class="service-icon">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h3>AI & Machine Learning</h3>
-                    <p>Intelligent systems that learn from data to automate processes, gain insights, and enhance decision-making.</p>
+                    <h3 data-translate="service4_title">AI & Machine Learning</h3>
+                    <p data-translate="service4_desc">Intelligent systems that learn from data to automate processes, gain insights, and enhance decision-making.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Predictive Analytics</li>
-                        <li><i class="fas fa-check"></i> Natural Language Processing</li>
-                        <li><i class="fas fa-check"></i> Computer Vision</li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service4_feature1">Predictive Analytics</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service4_feature2">Natural Language Processing</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service4_feature3">Computer Vision</span></li>
                     </ul>
                 </div>
                 
@@ -151,12 +156,12 @@
                     <div class="service-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Mobile Applications</h3>
-                    <p>Engaging, user-friendly mobile apps for iOS and Android that connect you with your customers anywhere.</p>
+                    <h3 data-translate="service5_title">Mobile Applications</h3>
+                    <p data-translate="service5_desc">Engaging, user-friendly mobile apps for iOS and Android that connect you with your customers anywhere.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> iOS Development</li>
-                        <li><i class="fas fa-check"></i> Android Development</li>
-                        <li><i class="fas fa-check"></i> Cross-Platform</li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service5_feature1">iOS Development</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service5_feature2">Android Development</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service5_feature3">Cross-Platform</span></li>
                     </ul>
                 </div>
                 
@@ -164,12 +169,12 @@
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Data Analytics</h3>
-                    <p>Transform raw data into actionable insights that drive strategic decisions and business growth.</p>
+                    <h3 data-translate="service6_title">Data Analytics</h3>
+                    <p data-translate="service6_desc">Transform raw data into actionable insights that drive strategic decisions and business growth.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Business Intelligence</li>
-                        <li><i class="fas fa-check"></i> Data Visualization</li>
-                        <li><i class="fas fa-check"></i> Big Data Solutions</li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service6_feature1">Business Intelligence</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service6_feature2">Data Visualization</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="service6_feature3">Big Data Solutions</span></li>
                     </ul>
                 </div>
             </div>
@@ -180,14 +185,14 @@
     <section class="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>Client Testimonials</h2>
-                <p>See what our clients have to say about working with Lamasoul High-Tech</p>
+                <h2 data-translate="testimonials_title">Client Testimonials</h2>
+                <p data-translate="testimonials_subtitle">See what our clients have to say about working with Lamasoul High-Tech</p>
             </div>
             
             <div class="testimonial-container">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"Lamasoul transformed our digital infrastructure completely. Their cloud solutions helped us reduce costs by 40% while improving performance."</p>
+                        <p data-translate="testimonial1">"Lamasoul transformed our digital infrastructure completely. Their cloud solutions helped us reduce costs by 40% while improving performance."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-image">
@@ -195,14 +200,14 @@
                         </div>
                         <div class="author-info">
                             <h4>Michael Rodriguez</h4>
-                            <p>CTO, TechVision Inc.</p>
+                            <p data-translate="testimonial1_position">CTO, TechVision Inc.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"The AI solutions developed by Lamasoul have given us a competitive edge in our industry. Their team is professional and innovative."</p>
+                        <p data-translate="testimonial2">"The AI solutions developed by Lamasoul have given us a competitive edge in our industry. Their team is professional and innovative."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-image">
@@ -210,14 +215,14 @@
                         </div>
                         <div class="author-info">
                             <h4>Sarah Johnson</h4>
-                            <p>CEO, DataFlow Systems</p>
+                            <p data-translate="testimonial2_position">CEO, DataFlow Systems</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"Outstanding cybersecurity implementation. Lamasoul's team identified vulnerabilities we didn't even know existed and secured our systems completely."</p>
+                        <p data-translate="testimonial3">"Outstanding cybersecurity implementation. Lamasoul's team identified vulnerabilities we didn't even know existed and secured our systems completely."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-image">
@@ -225,7 +230,7 @@
                         </div>
                         <div class="author-info">
                             <h4>David Chen</h4>
-                            <p>IT Director, SecureBank</p>
+                            <p data-translate="testimonial3_position">IT Director, SecureBank</p>
                         </div>
                     </div>
                 </div>
@@ -237,36 +242,37 @@
     <section id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Ready to transform your business with cutting-edge technology? Get in touch with our team today.</p>
+                <h2 data-translate="contact_title">Contact Us</h2>
+                <p data-translate="contact_subtitle">Ready to transform your business with cutting-edge technology? Get in touch with our team today.</p>
             </div>
             
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Let's Start a Conversation</h3>
-                    <p>We're here to answer your questions and discuss how Lamasoul High-Tech can help your business thrive in the digital age.</p>
+                    <h3 data-translate="contact_info_title">Let's Start a Conversation</h3>
+                    <p data-translate="contact_info_desc">We're here to answer your questions and discuss how Lamasoul High-Tech can help your business thrive in the digital age.</p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
-                                <h4>Our Location</h4>
-                                <p>123 Tech Avenue, Innovation District<br>San Francisco, CA 94107</p>
+                                <h4 data-translate="contact_location_title">Our Location</h4>
+                                <p>66 Tech Alice street,<br>Durban, South Africa</p>
                             </div>
                         </div>
                         
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <div>
-                                <h4>Phone Number</h4>
-                                <p>+1 (555) 123-4567</p>
+                                <h4 data-translate="contact_phone_title">Phone Number</h4>
+                                <p>+27698343633</p>
+                                <p>+27815818605</p>
                             </div>
                         </div>
                         
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <div>
-                                <h4>Email Address</h4>
+                                <h4 data-translate="contact_email_title">Email Address</h4>
                                 <p>info@lamasoulhightech.com</p>
                             </div>
                         </div>
@@ -274,7 +280,7 @@
                         <div class="contact-item">
                             <i class="fas fa-clock"></i>
                             <div>
-                                <h4>Business Hours</h4>
+                                <h4 data-translate="contact_hours_title">Business Hours</h4>
                                 <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                             </div>
                         </div>
@@ -284,19 +290,19 @@
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required id="name">
+                            <input type="text" placeholder="Your Name" required id="name" data-translate-placeholder="form_name">
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required id="email">
+                            <input type="email" placeholder="Your Email" required id="email" data-translate-placeholder="form_email">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Subject" required id="subject">
+                            <input type="text" placeholder="Subject" required id="subject" data-translate-placeholder="form_subject">
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" required id="message"></textarea>
+                            <textarea placeholder="Your Message" required id="message" data-translate-placeholder="form_message"></textarea>
                         </div>
                         <button type="submit" class="submit-btn">
-                            <span>Send Message</span>
+                            <span data-translate="form_submit">Send Message</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
@@ -311,9 +317,9 @@
             <div class="footer-container">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <i class="fas fa-atom"></i> Lamasoul High-Tech
+                        <img src="images/IMG-20250728-WA0002 (1).jpg" alt="Lamasoul High-Tech Logo" class="logo-img"></i> <span data-translate="company_name">Lamasoul High-Tech</span>
                     </div>
-                    <p>Transforming businesses through innovative technology solutions since 2015.</p>
+                    <p data-translate="footer_desc">Transforming businesses through innovative technology solutions since 2015.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -324,35 +330,35 @@
                 </div>
                 
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h4 data-translate="footer_links_title">Quick Links</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#home" data-translate="footer_nav_home">Home</a></li>
+                        <li><a href="#about" data-translate="footer_nav_about">About Us</a></li>
+                        <li><a href="#services" data-translate="footer_nav_services">Services</a></li>
+                        <li><a href="#contact" data-translate="footer_nav_contact">Contact</a></li>
+                        <li><a href="#" data-translate="footer_nav_careers">Careers</a></li>
+                        <li><a href="#" data-translate="footer_nav_blog">Blog</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-services">
-                    <h4>Our Services</h4>
+                    <h4 data-translate="footer_services_title">Our Services</h4>
                     <ul>
-                        <li><a href="#services">Software Development</a></li>
-                        <li><a href="#services">Cloud Solutions</a></li>
-                        <li><a href="#services">Cybersecurity</a></li>
-                        <li><a href="#services">AI & Machine Learning</a></li>
-                        <li><a href="#services">Mobile Applications</a></li>
-                        <li><a href="#services">Data Analytics</a></li>
+                        <li><a href="#services" data-translate="footer_service1">Software Development</a></li>
+                        <li><a href="#services" data-translate="footer_service2">Cloud Solutions</a></li>
+                        <li><a href="#services" data-translate="footer_service3">Cybersecurity</a></li>
+                        <li><a href="#services" data-translate="footer_service4">AI & Machine Learning</a></li>
+                        <li><a href="#services" data-translate="footer_service5">Mobile Applications</a></li>
+                        <li><a href="#services" data-translate="footer_service6">Data Analytics</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-newsletter">
-                    <h4>Stay Updated</h4>
-                    <p>Subscribe to our newsletter for the latest in technology trends and company updates.</p>
+                    <h4 data-translate="newsletter_title">Stay Updated</h4>
+                    <p data-translate="newsletter_desc">Subscribe to our newsletter for the latest in technology trends and company updates.</p>
                     <form id="newsletterForm">
                         <div class="newsletter-input">
-                            <input type="email" placeholder="Your email" required>
+                            <input type="email" placeholder="Your email" required data-translate-placeholder="newsletter_email">
                             <button type="submit"><i class="fas fa-paper-plane"></i></button>
                         </div>
                     </form>
@@ -360,7 +366,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Lamasoul High-Tech. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p data-translate="copyright">&copy; 2023 Lamasoul High-Tech. All rights reserved. | <a href="#" data-translate="privacy_policy">Privacy Policy</a> | <a href="#" data-translate="terms_service">Terms of Service</a></p>
             </div>
         </div>
     </footer>
@@ -369,6 +375,293 @@
     <button class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- Add this translation script before your existing script.js -->
+    <script>
+        // Translation functionality
+        const translations = {
+            en: {
+                // Navigation
+                "company_name": "Lamasoul High-Tech",
+                "nav_home": "Home",
+                "nav_about": "About",
+                "nav_services": "Services",
+                "nav_contact": "Contact",
+                
+                // Hero section
+                "hero_title": "Innovative Technology Solutions for Tomorrow's Challenges",
+                "hero_subtitle": "Lamasoul High-Tech delivers cutting-edge technology services that transform businesses and drive innovation in the digital age. We combine expertise with creativity to build solutions that matter.",
+                "btn_our_services": "Our Services",
+                "btn_get_in_touch": "Get In Touch",
+                
+                // About section
+                "about_title": "About Lamasoul",
+                "about_subtitle": "We are a forward-thinking technology company dedicated to pushing the boundaries of what's possible in the digital world.",
+                "about_section_title": "Driving Innovation Since 2015",
+                "about_text_1": "Lamasoul High-Tech was founded with a vision to bridge the gap between complex technology and business needs. Our team of experts brings together diverse skills in software development, AI, cloud computing, and cybersecurity.",
+                "about_text_2": "We believe that technology should empower, not complicate. That's why we focus on creating intuitive, powerful solutions that help our clients achieve their goals efficiently and effectively.",
+                "stat_projects": "Projects Completed",
+                "stat_clients": "Happy Clients",
+                "stat_experience": "Years Experience",
+                "award_title": "Industry Excellence Award 2023",
+                "award_desc": "Recognized for innovation in technology solutions",
+                
+                // Services section
+                "services_title": "Our Services",
+                "services_subtitle": "We offer a comprehensive range of technology services designed to meet the evolving needs of modern businesses.",
+                "service1_title": "Software Development",
+                "service1_desc": "Custom software solutions built with the latest technologies to solve your unique business challenges and drive growth.",
+                "service1_feature1": "Web Applications",
+                "service1_feature2": "Enterprise Software",
+                "service1_feature3": "API Development",
+                "service2_title": "Cloud Solutions",
+                "service2_desc": "Secure, scalable cloud infrastructure and migration services to optimize your operations and reduce costs.",
+                "service2_feature1": "Cloud Migration",
+                "service2_feature2": "AWS & Azure",
+                "service2_feature3": "Infrastructure Setup",
+                "service3_title": "Cybersecurity",
+                "service3_desc": "Comprehensive security solutions to protect your digital assets from evolving threats and vulnerabilities.",
+                "service3_feature1": "Security Audits",
+                "service3_feature2": "Threat Protection",
+                "service3_feature3": "Compliance",
+                "service4_title": "AI & Machine Learning",
+                "service4_desc": "Intelligent systems that learn from data to automate processes, gain insights, and enhance decision-making.",
+                "service4_feature1": "Predictive Analytics",
+                "service4_feature2": "Natural Language Processing",
+                "service4_feature3": "Computer Vision",
+                "service5_title": "Mobile Applications",
+                "service5_desc": "Engaging, user-friendly mobile apps for iOS and Android that connect you with your customers anywhere.",
+                "service5_feature1": "iOS Development",
+                "service5_feature2": "Android Development",
+                "service5_feature3": "Cross-Platform",
+                "service6_title": "Data Analytics",
+                "service6_desc": "Transform raw data into actionable insights that drive strategic decisions and business growth.",
+                "service6_feature1": "Business Intelligence",
+                "service6_feature2": "Data Visualization",
+                "service6_feature3": "Big Data Solutions",
+                
+                // Testimonials
+                "testimonials_title": "Client Testimonials",
+                "testimonials_subtitle": "See what our clients have to say about working with Lamasoul High-Tech",
+                "testimonial1": "\"Lamasoul transformed our digital infrastructure completely. Their cloud solutions helped us reduce costs by 40% while improving performance.\"",
+                "testimonial1_position": "CTO, TechVision Inc.",
+                "testimonial2": "\"The AI solutions developed by Lamasoul have given us a competitive edge in our industry. Their team is professional and innovative.\"",
+                "testimonial2_position": "CEO, DataFlow Systems",
+                "testimonial3": "\"Outstanding cybersecurity implementation. Lamasoul's team identified vulnerabilities we didn't even know existed and secured our systems completely.\"",
+                "testimonial3_position": "IT Director, SecureBank",
+                
+                // Contact section
+                "contact_title": "Contact Us",
+                "contact_subtitle": "Ready to transform your business with cutting-edge technology? Get in touch with our team today.",
+                "contact_info_title": "Let's Start a Conversation",
+                "contact_info_desc": "We're here to answer your questions and discuss how Lamasoul High-Tech can help your business thrive in the digital age.",
+                "contact_location_title": "Our Location",
+                "contact_phone_title": "Phone Number",
+                "contact_email_title": "Email Address",
+                "contact_hours_title": "Business Hours",
+                
+                // Form
+                "form_name": "Your Name",
+                "form_email": "Your Email",
+                "form_subject": "Subject",
+                "form_message": "Your Message",
+                "form_submit": "Send Message",
+                
+                // Footer
+                "footer_desc": "Transforming businesses through innovative technology solutions since 2015.",
+                "footer_links_title": "Quick Links",
+                "footer_nav_home": "Home",
+                "footer_nav_about": "About Us",
+                "footer_nav_services": "Services",
+                "footer_nav_contact": "Contact",
+                "footer_nav_careers": "Careers",
+                "footer_nav_blog": "Blog",
+                "footer_services_title": "Our Services",
+                "footer_service1": "Software Development",
+                "footer_service2": "Cloud Solutions",
+                "footer_service3": "Cybersecurity",
+                "footer_service4": "AI & Machine Learning",
+                "footer_service5": "Mobile Applications",
+                "footer_service6": "Data Analytics",
+                "newsletter_title": "Stay Updated",
+                "newsletter_desc": "Subscribe to our newsletter for the latest in technology trends and company updates.",
+                "newsletter_email": "Your email",
+                "copyright": "© 2023 Lamasoul High-Tech. All rights reserved.",
+                "privacy_policy": "Privacy Policy",
+                "terms_service": "Terms of Service"
+            },
+            
+            fr: {
+                // Navigation
+                "company_name": "Lamasoul High-Tech",
+                "nav_home": "Accueil",
+                "nav_about": "À propos",
+                "nav_services": "Services",
+                "nav_contact": "Contact",
+                
+                // Hero section
+                "hero_title": "Solutions Technologiques Innovantes pour les Défis de Demain",
+                "hero_subtitle": "Lamasoul High-Tech propose des services technologiques de pointe qui transforment les entreprises et stimulent l'innovation à l'ère numérique. Nous combinons expertise et créativité pour créer des solutions qui comptent.",
+                "btn_our_services": "Nos Services",
+                "btn_get_in_touch": "Contactez-nous",
+                
+                // About section
+                "about_title": "À propos de Lamasoul",
+                "about_subtitle": "Nous sommes une entreprise technologique avant-gardiste dédiée à repousser les limites du possible dans le monde numérique.",
+                "about_section_title": "Innovation Depuis 2015",
+                "about_text_1": "Lamasoul High-Tech a été fondée avec la vision de combler le fossé entre la technologie complexe et les besoins commerciaux. Notre équipe d'experts réunit des compétences diverses en développement logiciel, IA, informatique en nuage et cybersécurité.",
+                "about_text_2": "Nous croyons que la technologie devrait autonomiser, non compliquer. C'est pourquoi nous nous concentrons sur la création de solutions intuitives et puissantes qui aident nos clients à atteindre leurs objectifs efficacement.",
+                "stat_projects": "Projets Terminés",
+                "stat_clients": "Clients Satisfaits",
+                "stat_experience": "Années d'Expérience",
+                "award_title": "Prix d'Excellence Industriel 2023",
+                "award_desc": "Reconnu pour l'innovation dans les solutions technologiques",
+                
+                // Services section
+                "services_title": "Nos Services",
+                "services_subtitle": "Nous proposons une gamme complète de services technologiques conçus pour répondre aux besoins évolutifs des entreprises modernes.",
+                "service1_title": "Développement Logiciel",
+                "service1_desc": "Solutions logicielles personnalisées construites avec les dernières technologies pour résoudre vos défis commerciaux uniques et stimuler la croissance.",
+                "service1_feature1": "Applications Web",
+                "service1_feature2": "Logiciels d'Entreprise",
+                "service1_feature3": "Développement d'API",
+                "service2_title": "Solutions Cloud",
+                "service2_desc": "Infrastructure cloud sécurisée et évolutive et services de migration pour optimiser vos opérations et réduire les coûts.",
+                "service2_feature1": "Migration Cloud",
+                "service2_feature2": "AWS & Azure",
+                "service2_feature3": "Configuration d'Infrastructure",
+                "service3_title": "Cybersécurité",
+                "service3_desc": "Solutions de sécurité complètes pour protéger vos actifs numériques contre les menaces et vulnérabilités évolutives.",
+                "service3_feature1": "Audits de Sécurité",
+                "service3_feature2": "Protection contre les Menaces",
+                "service3_feature3": "Conformité",
+                "service4_title": "IA & Apprentissage Automatique",
+                "service4_desc": "Systèmes intelligents qui apprennent des données pour automatiser les processus, obtenir des insights et améliorer la prise de décision.",
+                "service4_feature1": "Analyse Prédictive",
+                "service4_feature2": "Traitement du Langage Naturel",
+                "service4_feature3": "Vision par Ordinateur",
+                "service5_title": "Applications Mobiles",
+                "service5_desc": "Applications mobiles engageantes et conviviales pour iOS et Android qui vous connectent à vos clients partout.",
+                "service5_feature1": "Développement iOS",
+                "service5_feature2": "Développement Android",
+                "service5_feature3": "Multi-Plateforme",
+                "service6_title": "Analyse de Données",
+                "service6_desc": "Transformez les données brutes en insights actionnables qui stimulent les décisions stratégiques et la croissance commerciale.",
+                "service6_feature1": "Business Intelligence",
+                "service6_feature2": "Visualisation de Données",
+                "service6_feature3": "Solutions Big Data",
+                
+                // Testimonials
+                "testimonials_title": "Témoignages Clients",
+                "testimonials_subtitle": "Découvrez ce que nos clients disent de leur collaboration avec Lamasoul High-Tech",
+                "testimonial1": "\"Lamasoul a complètement transformé notre infrastructure numérique. Leurs solutions cloud nous ont aidés à réduire les coûts de 40% tout en améliorant les performances.\"",
+                "testimonial1_position": "CTO, TechVision Inc.",
+                "testimonial2": "\"Les solutions d'IA développées par Lamasoul nous ont donné un avantage concurrentiel dans notre secteur. Leur équipe est professionnelle et innovante.\"",
+                "testimonial2_position": "PDG, DataFlow Systems",
+                "testimonial3": "\"Mise en œuvre exceptionnelle de la cybersécurité. L'équipe de Lamasoul a identifié des vulnérabilités dont nous ignorions l'existence et a sécurisé complètement nos systèmes.\"",
+                "testimonial3_position": "Directeur IT, SecureBank",
+                
+                // Contact section
+                "contact_title": "Contactez-nous",
+                "contact_subtitle": "Prêt à transformer votre entreprise avec des technologies de pointe ? Contactez notre équipe dès aujourd'hui.",
+                "contact_info_title": "Commençons une Conversation",
+                "contact_info_desc": "Nous sommes là pour répondre à vos questions et discuter de la façon dont Lamasoul High-Tech peut aider votre entreprise à prospérer à l'ère numérique.",
+                "contact_location_title": "Notre Emplacement",
+                "contact_phone_title": "Numéro de Téléphone",
+                "contact_email_title": "Adresse Email",
+                "contact_hours_title": "Heures d'Ouverture",
+                
+                // Form
+                "form_name": "Votre Nom",
+                "form_email": "Votre Email",
+                "form_subject": "Sujet",
+                "form_message": "Votre Message",
+                "form_submit": "Envoyer le Message",
+                
+                // Footer
+                "footer_desc": "Transformer les entreprises grâce à des solutions technologiques innovantes depuis 2015.",
+                "footer_links_title": "Liens Rapides",
+                "footer_nav_home": "Accueil",
+                "footer_nav_about": "À propos",
+                "footer_nav_services": "Services",
+                "footer_nav_contact": "Contact",
+                "footer_nav_careers": "Carrières",
+                "footer_nav_blog": "Blog",
+                "footer_services_title": "Nos Services",
+                "footer_service1": "Développement Logiciel",
+                "footer_service2": "Solutions Cloud",
+                "footer_service3": "Cybersécurité",
+                "footer_service4": "IA & Apprentissage Automatique",
+                "footer_service5": "Applications Mobiles",
+                "footer_service6": "Analyse de Données",
+                "newsletter_title": "Restez Informé",
+                "newsletter_desc": "Abonnez-vous à notre newsletter pour les dernières tendances technologiques et mises à jour de l'entreprise.",
+                "newsletter_email": "Votre email",
+                "copyright": "© 2023 Lamasoul High-Tech. Tous droits réservés.",
+                "privacy_policy": "Politique de Confidentialité",
+                "terms_service": "Conditions d'Utilisation"
+            }
+        };
+
+        // Translation functions
+        function translatePage(language) {
+            // Update text content
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[language] && translations[language][key]) {
+                    element.textContent = translations[language][key];
+                }
+            });
+            
+            // Update placeholders
+            document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (translations[language] && translations[language][key]) {
+                    element.placeholder = translations[language][key];
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.setAttribute('lang', language);
+            
+            // Update title
+            const titleElement = document.querySelector('title[data-translate]');
+            if (titleElement && translations[language] && translations[language]['title']) {
+                titleElement.textContent = translations[language]['title'];
+            }
+            
+            // Save preference
+            localStorage.setItem('preferred-language', language);
+        }
+
+        function setActiveLanguage(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get saved language or default to English
+            const savedLang = localStorage.getItem('preferred-language') || 'en';
+            
+            // Translate page
+            translatePage(savedLang);
+            setActiveLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    translatePage(lang);
+                    setActiveLanguage(lang);
+                });
+            });
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>
