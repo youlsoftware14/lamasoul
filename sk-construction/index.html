@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZK Construction · Build Beyond</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0b1a26;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .btn-primary {
+      display: inline-block;
+      background: #e7a53c;
+      color: #0b1a26;
+      padding: 14px 40px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(231, 165, 60, 0.35);
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+    }
+    .btn-primary:hover {
+      background: #d4942e;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(231, 165, 60, 0.45);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: #f0f4f8;
+      padding: 13px 36px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-outline:hover {
+      background: #e7a53c;
+      border-color: #e7a53c;
+      color: #0b1a26;
+      transform: translateY(-2px);
+    }
+
+    /* ---------- HEADER / NAV ---------- */
+    header {
+      background: #0b1a26;
+      color: white;
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(11, 26, 38, 0.92);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: #e7a53c;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #0b1a26;
+      box-shadow: 0 4px 12px rgba(231, 165, 60, 0.3);
+      transition: transform 0.3s ease;
+    }
+    .logo-icon:hover {
+      transform: rotate(-6deg) scale(1.02);
+    }
+
+    .logo-text {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+    .logo-text span {
+      color: #e7a53c;
+    }
+
+    nav {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #e2e9f0;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 20px;
+      border-radius: 40px;
+      transition: all 0.25s ease;
+      font-size: 0.95rem;
+    }
+    nav a:hover,
+    nav a.active {
+      background: #e7a53c;
+      color: #0b1a26;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      background: linear-gradient(135deg, #0b1a26 0%, #1a3142 100%);
+      padding: 80px 0 90px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(231, 165, 60, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(231, 165, 60, 0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content {
+      flex: 1 1 350px;
+    }
+    .hero-content .badge {
+      display: inline-block;
+      background: rgba(231, 165, 60, 0.18);
+      color: #e7a53c;
+      padding: 6px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      border: 1px solid rgba(231, 165, 60, 0.15);
+    }
+    .hero-content h1 {
+      font-size: 3.6rem;
+      font-weight: 800;
+      line-height: 1.12;
+      color: white;
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
+    }
+    .hero-content h1 span {
+      color: #e7a53c;
+      position: relative;
+    }
+    .hero-content h1 span::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      width: 100%;
+      height: 8px;
+      background: rgba(231, 165, 60, 0.2);
+      border-radius: 4px;
+      z-index: -1;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #b6ccdd;
+      max-width: 480px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      flex: 1 1 300px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: transform 0.4s ease;
+    }
+    .hero-image img:hover {
+      transform: scale(1.01);
+    }
+    .hero-image .floating-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -10px;
+      background: #e7a53c;
+      color: #0b1a26;
+      padding: 12px 24px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 12px 30px rgba(231, 165, 60, 0.35);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-image .floating-badge i {
+      font-size: 1.2rem;
+    }
+
+    /* ---------- TRUST BAR ---------- */
+    .trust-bar {
+      background: white;
+      padding: 28px 0;
+      border-bottom: 1px solid #eef2f6;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+    .trust-flex {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 600;
+      color: #1e3345;
+    }
+    .trust-item i {
+      color: #e7a53c;
+      font-size: 1.8rem;
+    }
+    .trust-item span {
+      font-weight: 400;
+      color: #5a6f7e;
+      font-size: 0.9rem;
+      display: block;
+    }
+
+    /* ---------- SERVICES PREVIEW ---------- */
+    .services-preview {
+      padding: 80px 0 70px;
+      background: #f8fafc;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-header h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+    }
+    .section-header p {
+      color: #4d6679;
+      font-size: 1.1rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .section-header .accent-line {
+      width: 60px;
+      height: 4px;
+      background: #e7a53c;
+      border-radius: 4px;
+      margin: 16px auto 0;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    .service-card {
+      background: white;
+      border-radius: 28px;
+      padding: 30px 20px 26px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+      transition: all 0.35s cubic-bezier(0.15, 0.75, 0.4, 1);
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #e7a53c;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.07);
+      border-color: #e7a53c30;
+    }
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    .service-card .icon-wrap {
+      width: 70px;
+      height: 70px;
+      background: rgba(231, 165, 60, 0.1);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      font-size: 2rem;
+      color: #e7a53c;
+      transition: 0.3s;
+    }
+    .service-card:hover .icon-wrap {
+      background: #e7a53c;
+      color: #0b1a26;
+      transform: scale(1.05) rotate(-4deg);
+    }
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .service-card p {
+      color: #5a6f7e;
+      font-size: 0.95rem;
+    }
+
+    /* ---------- SERVICE GALLERY (image showcase) ---------- */
+    .service-gallery {
+      margin-top: 20px;
+      padding-top: 40px;
+      border-top: 2px solid #eef2f6;
+    }
+    .service-gallery h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .service-gallery h3 span {
+      color: #e7a53c;
+    }
+    .service-gallery .gallery-sub {
+      color: #4d6679;
+      margin-bottom: 30px;
+      font-size: 1.05rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .gallery-item {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-item .gallery-info {
+      padding: 16px 20px 20px;
+    }
+    .gallery-item .gallery-info h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .gallery-item .gallery-info p {
+      color: #5a6f7e;
+      font-size: 0.9rem;
+    }
+    .gallery-item .gallery-tag {
+      display: inline-block;
+      background: rgba(231, 165, 60, 0.12);
+      color: #e7a53c;
+      padding: 2px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    /* ---------- CTA SECTION ---------- */
+    .cta-section {
+      background: linear-gradient(135deg, #0b1a26, #1f3547);
+      padding: 70px 0;
+      text-align: center;
+      color: white;
+    }
+    .cta-section h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+    .cta-section p {
+      color: #b6ccdd;
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+    .cta-section .btn-primary {
+      box-shadow: 0 12px 30px rgba(231, 165, 60, 0.4);
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #08131d;
+      color: #9bb0c0;
+      padding: 40px 0;
+    }
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    footer .logo-text {
+      font-size: 1.4rem;
+    }
+    footer span {
+      color: #e7a53c;
+    }
+    .footer-social a {
+      color: #9bb0c0;
+      margin-left: 18px;
+      font-size: 1.3rem;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .footer-social a:hover {
+      color: #e7a53c;
+      transform: translateY(-2px);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.6rem;
+      }
+      .hero {
+        padding: 60px 0 70px;
+      }
+      .hero-image .floating-badge {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 20px;
+        display: inline-flex;
+        justify-content: center;
+      }
+      .section-header h2 {
+        font-size: 2rem;
+      }
+      .trust-flex {
+        justify-content: center;
+      }
+      header .header-flex {
+        flex-direction: column;
+        gap: 12px;
+      }
+      nav a {
+        padding: 6px 14px;
+        font-size: 0.85rem;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .btn-primary,
+      .btn-outline {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-flex">
+    <div class="logo-area">
+      
+      <div class="logo-text">ZK<span>Construction</span></div>
+    </div>
+    <nav>
+      <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="#services"><i class="fas fa-tools"></i> Services</a>
+      <a href="#about"><i class="fas fa-users"></i> About</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="badge"><i class="fas fa-medal"></i> 10+ years of excellence</div>
+      <h1>Building <span>dreams</span> with precision &amp; trust</h1>
+      <p>From painting and tiling to solar installation – we bring your vision to life with quality craftsmanship and care.</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn-primary"><i class="fas fa-arrow-right"></i> Explore services</a>
+        <a href="#contact" class="btn-outline"><i class="fas fa-phone-alt"></i> Get a quote</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://placehold.co/600x450/1a3142/e7a53c?text=ZK+Construction" alt="ZKConstruction project" />
+      <div class="floating-badge">
+        <i class="fas fa-star"></i> 4.9 / 5.0 · 500+ projects
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container trust-flex">
+    <div class="trust-item"><i class="fas fa-hard-hat"></i> <div>10+ years <span>experience</span></div></div>
+    <div class="trust-item"><i class="fas fa-thumbs-up"></i> <div>100% quality <span>guaranteed</span></div></div>
+    <div class="trust-item"><i class="fas fa-clock"></i> <div>On-time delivery <span>every time</span></div></div>
+    <div class="trust-item"><i class="fas fa-handshake"></i> <div>500+ happy <span>clients</span></div></div>
+  </div>
+</div>
+
+<!-- SERVICES PREVIEW -->
+<section class="services-preview" id="services">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our <span style="color:#e7a53c;">services</span></h2>
+      <p>Comprehensive construction and renovation solutions tailored to your needs.</p>
+      <div class="accent-line"></div>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-paint-roller"></i></div><h3>Painting</h3><p>Interior &amp; exterior finishes</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-th"></i></div><h3>Tiling</h3><p>Floor &amp; wall tiling</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-home"></i></div><h3>Renovation</h3><p>Full makeovers</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-roof"></i></div><h3>Roofing</h3><p>Durable roofing systems</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-water"></i></div><h3>Waterproof</h3><p>Basement &amp; roof</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-grip-lines"></i></div><h3>Skimming</h3><p>Smooth wall finishes</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-tools"></i></div><h3>Maintenance</h3><p>Regular upkeep</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-link"></i></div><h3>Bonding</h3><p>Structural bonding</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-paint-brush"></i></div><h3>Plastering</h3><p>Walls &amp; ceilings</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-road"></i></div><h3>Paving</h3><p>Driveways &amp; paths</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-tree"></i></div><h3>Decking</h3><p>Wood &amp; composite</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-hammer"></i></div><h3>Carpentry</h3><p>Custom woodwork</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-bolt"></i></div><h3>Electrician</h3><p>Wiring &amp; lighting</p></div>
+      <div class="service-card"><div class="icon-wrap"><i class="fas fa-solar-panel"></i></div><h3>Solar installation</h3><p>Panels &amp; systems</p></div>
+    </div>
+
+    <!-- ========== IMAGE GALLERY FOR SERVICES ========== -->
+    <div class="service-gallery">
+      <h3>Project <span>Gallery</span></h3>
+      <p class="gallery-sub">Browse through our recent work – each project reflects our commitment to quality.</p>
+
+      <div class="gallery-grid">
+        <!-- Painting projects -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0092.jpg" alt="Painting project" />
+          <div class="gallery-info">
+            <h4>Professional Painting</h4>
+            <p>Interior &amp; exterior with premium finishes.</p>
+            <span class="gallery-tag">Painting</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0092.jpg" alt="Exterior painting" />
+          <div class="gallery-info">
+            <h4>Exterior Painting</h4>
+            <p>Weather-resistant finishes.</p>
+            <span class="gallery-tag">Painting</span>
+          </div>
+        </div>
+
+        <!-- Tiling projects -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0054.jpg" alt="Tiling project" />
+          <div class="gallery-info">
+            <h4>Precision Tiling</h4>
+            <p>Floor and wall tiling with perfect alignment.</p>
+            <span class="gallery-tag">Tiling</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0053 (1).jpg" alt="Kitchen tiling" />
+          <div class="gallery-info">
+            <h4>Kitchen Tiling</h4>
+            <p>Modern kitchen backsplashes and floors.</p>
+            <span class="gallery-tag">Tiling</span>
+          </div>
+        </div>
+
+        <!-- Renovation projects -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0046.jpg" alt="Renovation project" />
+          <div class="gallery-info">
+            <h4>Full Renovation</h4>
+            <p>Complete home and office makeovers.</p>
+            <span class="gallery-tag">Renovation</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0067.jpg" alt="Modern renovation" />
+          <div class="gallery-info">
+            <h4>Modern Renovation</h4>
+            <p>Contemporary updates and styling.</p>
+            <span class="gallery-tag">Renovation</span>
+          </div>
+        </div>
+
+        <!-- Roofing projects -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0095.jpg" alt="Roofing project" />
+          <div class="gallery-info">
+            <h4>Durable Roofing</h4>
+            <p>Quality roofing installation and repairs.</p>
+            <span class="gallery-tag">Roofing</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0060.jpg" alt="Roof repair" />
+          <div class="gallery-info">
+            <h4>Roof Repair</h4>
+            <p>Professional roof maintenance and repair.</p>
+            <span class="gallery-tag">Roofing</span>
+          </div>
+        </div>
+
+        <!-- Waterproof -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0093.jpg" alt="Waterproof project" />
+          <div class="gallery-info">
+            <h4>Waterproofing</h4>
+            <p>Basement and roof waterproofing solutions.</p>
+            <span class="gallery-tag">Waterproof</span>
+          </div>
+        </div>
+
+        <!-- Skimming -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0081.jpg" alt="Skimming project" />
+          <div class="gallery-info">
+            <h4>Skimming &amp; Finishing</h4>
+            <p>Smooth wall and ceiling finishes.</p>
+            <span class="gallery-tag">Skimming</span>
+          </div>
+        </div>
+
+        <!-- Maintenance -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0067.jpg" alt="Maintenance project" />
+          <div class="gallery-info">
+            <h4>Regular Maintenance</h4>
+            <p>Upkeep and repair services for your property.</p>
+            <span class="gallery-tag">Maintenance</span>
+          </div>
+        </div>
+
+        <!-- Bonding -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0054.jpg" alt="Bonding project" />
+          <div class="gallery-info">
+            <h4>Structural Bonding</h4>
+            <p>Strong and reliable structural bonding.</p>
+            <span class="gallery-tag">Bonding</span>
+          </div>
+        </div>
+
+        <!-- Plastering -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0051.jpg" alt="Plastering project" />
+          <div class="gallery-info">
+            <h4>Professional Plastering</h4>
+            <p>Walls and ceilings with flawless finish.</p>
+            <span class="gallery-tag">Plastering</span>
+          </div>
+        </div>
+
+        <!-- Paving -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0088.jpg" alt="Paving project" />
+          <div class="gallery-info">
+            <h4>Driveway Paving</h4>
+            <p>Beautiful and durable paving solutions.</p>
+            <span class="gallery-tag">Paving</span>
+          </div>
+        </div>
+
+        <!-- Decking -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0052.jpg" alt="Decking project" />
+          <div class="gallery-info">
+            <h4>Custom Decking</h4>
+            <p>Wood and composite deck construction.</p>
+            <span class="gallery-tag">Decking</span>
+          </div>
+        </div>
+
+        <!-- Carpentry -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0053 (1).jpg" alt="Carpentry project" />
+          <div class="gallery-info">
+            <h4>Custom Carpentry</h4>
+            <p>Bespoke woodwork and cabinetry.</p>
+            <span class="gallery-tag">Carpentry</span>
+          </div>
+        </div>
+
+        <!-- Electrician -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0039.jpg" alt="Electrician project" />
+          <div class="gallery-info">
+            <h4>Electrical Services</h4>
+            <p>Wiring, lighting, and electrical systems.</p>
+            <span class="gallery-tag">Electrician</span>
+          </div>
+        </div>
+
+        <!-- Solar -->
+        <div class="gallery-item">
+          <img src="C:\Users\HP I5\Documents\sk-construction\iamages\IMG-20260627-WA0082.jpg" alt="Solar project" />
+          <div class="gallery-info">
+            <h4>Solar Installation</h4>
+            <p>Solar panels and renewable energy systems.</p>
+            <span class="gallery-tag">Solar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section" id="about">
+  <div class="container">
+    <h2>Ready to build something <span style="color:#e7a53c;">great</span>?</h2>
+    <p>Let's discuss your project. We're here to bring your ideas to life with quality and care.</p>
+    <a href="#contact" class="btn-primary"><i class="fas fa-arrow-right"></i> Start your project</a>
+  </div>
+</section>
+
+<!-- CONTACT with updated WhatsApp number -->
+<section id="contact" style="padding:70px 0; background:#f8fafc;">
+  <div class="container">
+    <div class="section-header">
+      <h2>Let's <span style="color:#e7a53c;">connect</span></h2>
+      <p>Reach out via email, WhatsApp or Facebook – we're here to help.</p>
+      <div class="accent-line"></div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:40px; background:white; padding:40px 36px; border-radius:40px; box-shadow:0 12px 40px rgba(0,0,0,0.02); border:1px solid #eef2f6; max-width:900px; margin:0 auto;">
+      <div style="flex:1 1 220px;">
+        <div style="display:flex; align-items:center; gap:18px; margin-bottom:20px;">
+          <i style="width:44px;height:44px;background:#f0f4f8;border-radius:40px;display:flex;align-items:center;justify-content:center;color:#e7a53c;font-size:1.3rem;" class="fas fa-envelope"></i>
+          <a href="mailto:info@zkconstruction.com" style="color:#1e2b37;text-decoration:none;font-weight:500;">info@zkconstruction.com</a>
+        </div>
+        <div style="display:flex; align-items:center; gap:18px; margin-bottom:20px;">
+          <i style="width:44px;height:44px;background:#f0f4f8;border-radius:40px;display:flex;align-items:center;justify-content:center;color:#e7a53c;font-size:1.3rem;" class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/27685892912" target="_blank" style="color:#1e2b37;text-decoration:none;font-weight:500;">+27 68 589 2912</a>
+        </div>
+        <div style="display:flex; align-items:center; gap:18px; margin-bottom:20px;">
+          <i style="width:44px;height:44px;background:#f0f4f8;border-radius:40px;display:flex;align-items:center;justify-content:center;color:#e7a53c;font-size:1.3rem;" class="fab fa-facebook"></i>
+          <a href="https://www.facebook.com/profile.php?id=61575129700447&rdid=swYo9xIoAbkEpIeM&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14gkRz6ZG99%2F#" target="_blank" style="color:#1e2b37;text-decoration:none;font-weight:500;">ZKConstruction</a>
+        </div>
+        <div style="display:flex; gap:16px; margin-top:20px;">
+          <a href="mailto:info@zkconstruction.com" style="background:#f0f4f8;width:48px;height:48px;border-radius:40px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#1e2b37;transition:0.2s;text-decoration:none;"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/27685892912" target="_blank" style="background:#f0f4f8;width:48px;height:48px;border-radius:40px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#1e2b37;transition:0.2s;text-decoration:none;"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61575129700447&rdid=swYo9xIoAbkEpIeM&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14gkRz6ZG99%2F#" target="_blank" style="background:#f0f4f8;width:48px;height:48px;border-radius:40px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#1e2b37;transition:0.2s;text-decoration:none;"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div style="flex:2 1 260px;">
+        <form>
+          <input type="text" placeholder="Your name" style="width:100%;padding:14px 18px;margin-bottom:14px;border:1px solid #dde5ed;border-radius:40px;font-size:1rem;background:#fafcfd;" required />
+          <input type="email" placeholder="Your email" style="width:100%;padding:14px 18px;margin-bottom:14px;border:1px solid #dde5ed;border-radius:40px;font-size:1rem;background:#fafcfd;" required />
+          <textarea placeholder="Tell us about your project..." style="width:100%;padding:14px 18px;margin-bottom:16px;border:1px solid #dde5ed;border-radius:24px;font-size:1rem;background:#fafcfd;min-height:100px;resize:vertical;"></textarea>
+          <button type="submit" class="btn-primary" style="width:100%;text-align:center;"><i class="fas fa-paper-plane"></i> Send message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="logo-text" style="font-size:1.3rem;">ZK<span>Construction</span></div>
+    <p>© 2026 · Built with precision &amp; care. <i class="fas fa-phone-alt" style="margin-left:12px;"></i> +27 68 589 2912</p>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61575129700447&rdid=swYo9xIoAbkEpIeM&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14gkRz6ZG99%2F#                                                                                                                                                      " target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/27685892912" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- tiny JS for form demo & smooth scroll -->
+<script>
+  document.querySelectorAll('nav a, .hero-buttons a, .cta-section a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#') && href.length > 1) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const headerHeight = document.querySelector('header').offsetHeight;
+          window.scrollTo({ top: target.offsetTop - headerHeight - 20, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  document.querySelector('form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.btn-primary');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+    btn.style.background = '#2a8e5c';
+    setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; this.reset(); }, 2500);
+  });
+</script>
+
+</body>
+</html>

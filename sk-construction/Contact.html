@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZK Construction · Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, system-ui, sans-serif; }
+    body { background: #fafbfc; color: #1e2b37; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-title { font-size: 2.2rem; font-weight: 600; margin-bottom: 2rem; position: relative; display: inline-block; }
+    .section-title::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 60px; height: 4px; background: #e7a53c; border-radius: 4px; }
+    .btn { display: inline-block; background: #e7a53c; color: #0b1a26; padding: 12px 36px; border-radius: 40px; font-weight: 600; text-decoration: none; transition: 0.25s; box-shadow: 0 6px 14px rgba(231,165,60,0.35); border: none; cursor: pointer; }
+    .btn:hover { background: #d18e2c; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(231,165,60,0.4); }
+
+    header { background: #0b1a26; color: white; padding: 16px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .header-flex { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-icon { width: 52px; height: 52px; background: #e7a53c; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.6rem; color: #0b1a26; box-shadow: 0 4px 8px rgba(231,165,60,0.3); }
+    .logo-text { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.5px; }
+    .logo-text span { color: #e7a53c; }
+    nav { display: flex; gap: 8px; flex-wrap: wrap; }
+    nav a { color: #f0f4f8; text-decoration: none; font-weight: 500; padding: 8px 18px; border-radius: 40px; transition: 0.2s; font-size: 1rem; }
+    nav a:hover, nav a.active { background: #e7a53c; color: #0b1a26; }
+
+    .contact-grid { display: flex; flex-wrap: wrap; gap: 40px; background: white; padding: 40px 36px; border-radius: 40px; box-shadow: 0 12px 40px rgba(0,0,0,0.02); border: 1px solid #eef2f6; margin: 30px 0; }
+    .contact-info { flex: 1 1 240px; }
+    .contact-info h3 { font-size: 1.8rem; margin-bottom: 20px; }
+    .contact-item { display: flex; align-items: center; gap: 18px; margin-bottom: 20px; font-size: 1.1rem; }
+    .contact-item i { width: 44px; height: 44px; background: #f0f4f8; border-radius: 40px; display: flex; align-items: center; justify-content: center; color: #e7a53c; font-size: 1.3rem; flex-shrink: 0; }
+    .contact-item a { color: #1e2b37; text-decoration: none; font-weight: 500; transition: 0.2s; }
+    .contact-item a:hover { color: #e7a53c; }
+    .social-links { display: flex; gap: 16px; margin-top: 28px; }
+    .social-links a { background: #f0f4f8; width: 52px; height: 52px; border-radius: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #1e2b37; transition: 0.2s; text-decoration: none; }
+    .social-links a:hover { background: #e7a53c; color: white; transform: scale(1.05); }
+    .contact-form { flex: 2 1 300px; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 14px 18px; margin-bottom: 16px; border: 1px solid #dde5ed; border-radius: 40px; font-size: 1rem; background: #fafcfd; transition: 0.2s; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #e7a53c; box-shadow: 0 0 0 4px rgba(231,165,60,0.15); }
+    .contact-form textarea { border-radius: 24px; min-height: 120px; resize: vertical; }
+    .contact-form .btn { width: 100%; text-align: center; }
+
+    footer { background: #0b1a26; color: #b0c6d6; padding: 30px 0; margin-top: 30px; border-radius: 40px 40px 0 0; }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; }
+    footer span { color: #e7a53c; }
+    footer .footer-social a { color: #b0c6d6; margin-left: 16px; font-size: 1.2rem; transition: 0.2s; text-decoration: none; }
+    footer .footer-social a:hover { color: #e7a53c; }
+
+    @media (max-width:700px) { .header-flex { flex-direction: column; gap: 16px; } .section-title { font-size: 1.8rem; } .contact-grid { padding: 28px 16px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-flex">
+    <div class="logo-area">
+      <div class="logo-text">ZK<span>Construction</span></div>
+    </div>
+    <nav>
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html"><i class="fas fa-users"></i> About</a>
+      <a href="services.html"><i class="fas fa-tools"></i> Services</a>
+      <a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding:40px 0;">
+  <div class="container">
+    <h2 class="section-title">Get in touch</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Let's talk</h3>
+        <p style="margin-bottom:28px; color:#3f5565;">Reach out via email, WhatsApp or Facebook – we're here to help.</p>
+        
+        <!-- Email -->
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:info@zkconstruction.com">info@zkconstruction.com</a>
+        </div>
+        
+        <!-- WhatsApp - Updated number -->
+        <div class="contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/27685892912" target="_blank">+27 68 589 2912</a>
+        </div>
+        
+        <!-- Facebook - Updated to ZKConstruction -->
+        <div class="contact-item">
+          <i class="fab fa-facebook"></i>
+          <a href="https://www.facebook.com/profile.php?id=61575129700447&rdid=swYo9xIoAbkEpIeM&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14gkRz6ZG99%2F#" target="_blank">ZKConstruction</a>
+        </div>
+        
+        <!-- Social Icons -->
+        <div class="social-links">
+          <a href="mailto:info@zkconstruction.com" aria-label="email"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/27685892912" target="_blank" aria-label="whatsapp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61575129700447&rdid=swYo9xIoAbkEpIeM&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14gkRz6ZG99%2F#" target="_blank" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank" aria-label="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <form>
+          <input type="text" placeholder="Your name" required />
+          <input type="email" placeholder="Your email" required />
+          <input type="text" placeholder="Subject" />
+          <textarea placeholder="Tell us about your project..."></textarea>
+          <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 <span>ZK Construction</span> – built with care.</p>
+    <div>
+      <span style="margin-right:20px;"><i class="fas fa-phone-alt" style="margin-right:6px;"></i> +27 68 589 2912</span>
+      <span class="footer-social">
+        <a href="/https://www.facebook.com/profile.php?id=61575129700447&rdid=swYo9xIoAbkEpIeM&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14gkRz6ZG99%2F#" target="_blank" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/27685892912" target="_blank" aria-label="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" target="_blank" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank" aria-label="linkedin"><i class="fab fa-linkedin-in"></i></a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- Form submission handler -->
+<script>
+  document.querySelector('form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.btn');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i> Message sent!';
+    btn.style.background = '#2a8e5c';
+    setTimeout(() => { 
+      btn.innerHTML = orig; 
+      btn.style.background = ''; 
+      this.reset(); 
+    }, 3000);
+  });
+</script>
+
+</body>
+</html>

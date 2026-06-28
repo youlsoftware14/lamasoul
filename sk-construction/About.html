@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZK Construction · About</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, system-ui, sans-serif; }
+    body { background: #fafbfc; color: #1e2b37; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-title { font-size: 2.2rem; font-weight: 600; margin-bottom: 2rem; position: relative; display: inline-block; }
+    .section-title::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 60px; height: 4px; background: #e7a53c; border-radius: 4px; }
+    .btn { display: inline-block; background: #e7a53c; color: #0b1a26; padding: 12px 36px; border-radius: 40px; font-weight: 600; text-decoration: none; transition: 0.25s; box-shadow: 0 6px 14px rgba(231,165,60,0.35); border: none; cursor: pointer; }
+    .btn:hover { background: #d18e2c; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(231,165,60,0.4); }
+
+    header { background: #0b1a26; color: white; padding: 16px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .header-flex { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-icon { width: 52px; height: 52px; background: #e7a53c; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.6rem; color: #0b1a26; box-shadow: 0 4px 8px rgba(231,165,60,0.3); }
+    .logo-text { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.5px; }
+    .logo-text span { color: #e7a53c; }
+    nav { display: flex; gap: 8px; flex-wrap: wrap; }
+    nav a { color: #f0f4f8; text-decoration: none; font-weight: 500; padding: 8px 18px; border-radius: 40px; transition: 0.2s; font-size: 1rem; }
+    nav a:hover, nav a.active { background: #e7a53c; color: #0b1a26; }
+
+    .about-wrap { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; padding: 40px 0; }
+    .about-text { flex: 2; }
+    .about-text p { margin-bottom: 18px; font-size: 1.1rem; color: #1f3342; }
+    .about-stats { display: flex; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
+    .stat { background: white; padding: 16px 28px; border-radius: 60px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); font-weight: 600; }
+    .stat i { color: #e7a53c; margin-right: 8px; }
+    .about-image { flex: 1 1 280px; text-align: center; }
+    .about-image img { max-width: 100%; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); background: #fff; padding: 8px; }
+
+    footer { background: #0b1a26; color: #b0c6d6; padding: 30px 0; margin-top: 30px; border-radius: 40px 40px 0 0; }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; }
+    footer span { color: #e7a53c; }
+
+    @media (max-width:700px) { .header-flex { flex-direction: column; gap: 16px; } .section-title { font-size: 1.8rem; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-flex">
+    <div class="logo-area">
+     
+      <div class="logo-text">ZK<span>Construction</span></div>
+    </div>
+    <nav>
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html" class="active"><i class="fas fa-users"></i> About</a>
+      <a href="services.html"><i class="fas fa-tools"></i> Services</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding:40px 0;">
+  <div class="container">
+    <h2 class="section-title">About ZK</h2>
+    <div class="about-wrap">
+      <div class="about-text">
+        <p><strong>ZK Construction</strong> has been delivering quality craftsmanship for over a decade. From painting and tiling to solar installation and decking, we bring precision and care to every project.</p>
+        <p>We believe in transparent communication, using premium materials, and finishing on time. Our team of skilled professionals is dedicated to making your space look and feel exceptional.</p>
+        <div class="about-stats">
+          <div class="stat"><i class="fas fa-check-circle"></i> 500+ projects</div>
+          <div class="stat"><i class="fas fa-star"></i> 4.9 / 5.0</div>
+          <div class="stat"><i class="fas fa-clock"></i> 10+ years</div>
+        </div>
+        <a href="contact.html" class="btn" style="margin-top:20px;"><i class="fas fa-arrow-right"></i> Get in touch</a>
+      </div>
+      <div class="about-image">
+        <img src="https://placehold.co/500x400/0b1a26/e7a53c?text=ZK+Team" alt="ZK Construction team" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 <span>ZK Construction</span> – built with care.</p>
+    <p><i class="fas fa-phone-alt" style="margin-right:6px;"></i> +27 685892912</p>
+  </div>
+</footer>
+
+</body>
+</html>

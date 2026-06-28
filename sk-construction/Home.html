@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZK Construction · Home</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, system-ui, sans-serif; }
+    body { background: #fafbfc; color: #1e2b37; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-title { font-size: 2.2rem; font-weight: 600; margin-bottom: 2rem; position: relative; display: inline-block; }
+    .section-title::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 60px; height: 4px; background: #e7a53c; border-radius: 4px; }
+    .btn { display: inline-block; background: #e7a53c; color: #0b1a26; padding: 12px 36px; border-radius: 40px; font-weight: 600; text-decoration: none; transition: 0.25s; box-shadow: 0 6px 14px rgba(231,165,60,0.35); border: none; cursor: pointer; }
+    .btn:hover { background: #d18e2c; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(231,165,60,0.4); }
+
+    /* ---------- HEADER ---------- */
+    header { background: #0b1a26; color: white; padding: 16px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .header-flex { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-icon { width: 52px; height: 52px; background: #e7a53c; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.6rem; color: #0b1a26; box-shadow: 0 4px 8px rgba(231,165,60,0.3); }
+    .logo-text { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.5px; }
+    .logo-text span { color: #e7a53c; }
+    nav { display: flex; gap: 8px; flex-wrap: wrap; }
+    nav a { color: #f0f4f8; text-decoration: none; font-weight: 500; padding: 8px 18px; border-radius: 40px; transition: 0.2s; font-size: 1rem; }
+    nav a:hover, nav a.active { background: #e7a53c; color: #0b1a26; }
+
+    /* ---------- HERO ---------- */
+    .hero { background: linear-gradient(145deg, #eef3f7, #dce6ef); padding: 60px 0 70px; border-radius: 0 0 40px 40px; margin-bottom: 20px; }
+    .hero-grid { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+    .hero-content { flex: 1 1 300px; }
+    .hero-content h1 { font-size: 3rem; font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+    .hero-content h1 span { color: #e7a53c; }
+    .hero-content p { font-size: 1.2rem; color: #2a3a48; max-width: 500px; margin-bottom: 30px; }
+    .hero-image { flex: 1 1 280px; text-align: center; }
+    .hero-image img { max-width: 100%; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); background: #fff; padding: 8px; }
+
+    /* ---------- FEATURES (home) ---------- */
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 30px; margin: 30px 0; }
+    .feature-card { background: white; padding: 30px 20px; border-radius: 28px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.04); transition: 0.25s; border: 1px solid rgba(0,0,0,0.02); }
+    .feature-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); }
+    .feature-card i { font-size: 2.6rem; color: #e7a53c; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 1.3rem; margin-bottom: 6px; }
+
+    /* ---------- FOOTER ---------- */
+    footer { background: #0b1a26; color: #b0c6d6; padding: 30px 0; margin-top: 30px; border-radius: 40px 40px 0 0; }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; }
+    footer span { color: #e7a53c; }
+
+    @media (max-width:700px) { .header-flex { flex-direction: column; gap: 16px; } .hero-content h1 { font-size: 2.4rem; } .section-title { font-size: 1.8rem; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-flex">
+    <div class="logo-area">
+      
+      <div class="logo-text">ZK<span>Construction</span></div>
+    </div>
+    <nav>
+      <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html"><i class="fas fa-users"></i> About</a>
+      <a href="services.html"><i class="fas fa-tools"></i> Services</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1>Build with <span>trust</span> &amp; precision</h1>
+      <p>ZKConstruction – your partner for painting, tiling, roofing, solar and all renovation needs.</p>
+      <a href="services.html" class="btn"><i class="fas fa-arrow-right"></i> Explore services</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://placehold.co/600x400/0b1a26/e7a53c?text=ZK+Construction" alt="ZKConstruction" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Why ZKConstruction?</h2>
+    <div class="feature-grid">
+      <div class="feature-card"><i class="fas fa-hard-hat"></i><h3>Experience</h3><p>10+ years in construction</p></div>
+      <div class="feature-card"><i class="fas fa-thumbs-up"></i><h3>Quality</h3><p>Premium materials &amp; finish</p></div>
+      <div class="feature-card"><i class="fas fa-clock"></i><h3>On time</h3><p>Projects delivered on schedule</p></div>
+      <div class="feature-card"><i class="fas fa-handshake"></i><h3>Trust</h3><p>500+ happy clients</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 <span>ZKConstruction</span> – built with care.</p>
+    <p><i class="fas fa-phone-alt" style="margin-right:6px;"></i> +27 68 589 2912</p>
+  </div>
+</footer>
+
+</body>
+</html>
